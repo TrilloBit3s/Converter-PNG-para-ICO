@@ -5,7 +5,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
-namespace PngParaIcoConverter
+namespace PngToIco
 {
     public partial class Form1 : Form
     {
@@ -14,34 +14,55 @@ namespace PngParaIcoConverter
             InitializeComponent();
         }
 
-        private void btnConverter_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+		// private void btnConverter_Click(object sender, EventArgs e)
+		// {
+			// OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.Filter = "PNG Image|*.png";
+			// openFileDialog.Filter = "PNG Image|*.png";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string pngPath = openFileDialog.FileName;
+			// if (openFileDialog.ShowDialog() == DialogResult.OK)
+			// {
+				// string pngPath = openFileDialog.FileName;
 
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
+				// string icoPath = Path.Combine(
+					// Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+					// "logo.ico"
+				// );
 
-                saveFileDialog.Filter = "Icon File|*.ico";
-                saveFileDialog.Title = "Salvar ícone";
+				// ConvertTo32x32Ico(pngPath, icoPath);
 
-                // Nome padrão baseado no PNG
-                saveFileDialog.FileName = Path.GetFileNameWithoutExtension(pngPath) + ".ico";
+				// MessageBox.Show("Ícone criado em:\n" + icoPath);
+			// }
+		// }
+		
+		private void btnConverter_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog();
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string icoPath = saveFileDialog.FileName;
+			openFileDialog.Filter = "PNG Image|*.png";
 
-                    ConvertTo32x32Ico(pngPath, icoPath);
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				string pngPath = openFileDialog.FileName;
 
-                    MessageBox.Show("Ícone criado em:\n" + icoPath);
-                }
-            }
-        }
+				SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+				saveFileDialog.Filter = "Icon File|*.ico";
+				saveFileDialog.Title = "Salvar ícone";
+
+				// Nome padrão baseado no PNG
+				saveFileDialog.FileName = Path.GetFileNameWithoutExtension(pngPath) + ".ico";
+
+				if (saveFileDialog.ShowDialog() == DialogResult.OK)
+				{
+					string icoPath = saveFileDialog.FileName;
+
+					ConvertTo32x32Ico(pngPath, icoPath);
+
+					MessageBox.Show("Ícone criado em:\n" + icoPath);
+				}
+			}
+		}
 
         public static void ConvertTo32x32Ico(string pngPath, string icoPath)
         {
