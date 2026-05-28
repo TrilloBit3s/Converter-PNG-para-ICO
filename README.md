@@ -9,4 +9,5 @@ Com tamanhos
 <br>
 Com resoluções
 <img width="750" height="422" alt="3" src="https://github.com/user-attachments/assets/4c1db29f-6600-4e02-bb6b-c84fd7e08073" />
+<br>
 <img width="1676" height="889" alt="2" src="https://github.com/user-attachments/assets/eae50a16-1242-4755-b9d2-0defe862b82b" />
