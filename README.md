@@ -1,6 +1,8 @@
 # Converter-PNG-para-ICO
 Programa para Csharp windows form
 
+<p>Arquivos para várias finalidades, comecei com criação de icones e evolui para diminuição de texturas com redução de peso da imagem.</p>
+<br>
 <p>Simples</p>
 <img width="268" height="110" alt="png para ico" src="https://github.com/user-attachments/assets/4e2a185f-fc5d-433d-8765-767bf287e159" />
 <br>
